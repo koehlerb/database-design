@@ -90,6 +90,11 @@ const config = {
             label: 'Book',
           },
           {
+            href: '/slideslist',
+            position: 'left',
+            label: 'Slides',
+          },
+          {
             href: 'https://github.com/koehlerb/database-design',
             label: 'GitHub',
             position: 'right',

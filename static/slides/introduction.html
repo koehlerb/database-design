@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Introduction to Databases</title>
+
+		<link rel="stylesheet" href="../revealjs/dist/reset.css">
+		<link rel="stylesheet" href="../revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="../revealjs/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+## Introduction to Databases
+---
+## Outline
+* Information Systems
+* Operating System Features
+* Operating System Limitations
+* Database Management Systems
+---
+## Information Systems 
+![Information Systems](/img/information-system-5.svg)
+---
+## Information Systems 
+![Information Systems](/img/information-system-4.svg)
+---
+## Information Systems 
+![Information Systems](/img/information-system-3.svg)
+---
+## Information Systems 
+![Information Systems](/img/information-system-2.svg)
+---
+## Information Systems 
+![Information Systems](/img/information-system-1.svg)
+---
+## Application
+![Application](/img/storage.svg)
+---
+## Operating System Features
+* create/delete/rename files/folders
+* read/write files
+---
+## Operating System Limitations
+* data redundancy
+* data isolation
+* integrity problems
+* security problems
+* concurrency access
+---
+## Integrity Problems 
+* operating systems don't enforce any internal structure
+  on files
+* it is up to the application to enforce
+---
+## Concurreny Problems 
+* operating systems don't manage access to files 
+  by competing users the way we might expect
+* it is up to the applications to enforce
+---
+## Application with Data Management
+![Application with Data Management](/img/data-management.svg)
+---
+## Multiple Applications
+![Multiple Applications](/img/multiple-applications.svg)
+---
+## Database Management System
+![Application with Data Management](/img/dbms.svg)
+
+					</textarea>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../revealjs/dist/reveal.js"></script>
+		<script src="../revealjs/plugin/notes/notes.js"></script>
+		<script src="../revealjs/plugin/markdown/markdown.js"></script>
+		<script src="../revealjs/plugin/highlight/highlight.js"></script>
+		<script src="../revealjs/plugin/math/math.js"></script>
+		<script src="../revealjs/plugin/mermaid/mermaid.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				mermaid: {},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ 
+					RevealMarkdown, 
+					RevealHighlight, 
+					RevealNotes, 
+					RevealMath.KaTeX,
+					RevealMermaid
+				]
+			});
+		</script>
+	</body>
+</html>
