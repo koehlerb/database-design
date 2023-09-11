@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Fundamental Concepts</title>
+
+		<link rel="stylesheet" href="../revealjs/dist/reset.css">
+		<link rel="stylesheet" href="../revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="../revealjs/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+## Fundamental Concepts, Characteristics, and Benefits of Databases
+---
+## Outline
+* Database
+* Database Management System (DBMS)
+---
+## Database 
+* shared collection of related data 
+* supports the activities of a particular organization
+* defined once
+* accessed by various users 
+---
+## Database Properties 
+* represents real-world facts 
+* logical, coherent, and internally consistent 
+* designed, built, and populated with data for a specific purpose 
+* each data item is stored in a *field* 
+* a combination of fields makes up a *table* 
+---
+## Database Management System (DBMS) 
+* programs or software that enables users to create and maintain databases 
+* goal of DBMS is to create an environment that is convenient and efficient for managing and accessing data 
+---
+## DBMS Operations 
+* sort 
+* match
+* link 
+* aggregate
+* arrange 
+---
+## DBMS Operations - Sort 
+* order records by the contents of one or more fields 
+* numeric or alphabetical ordering
+* ascending or descending 
+---
+## DBMS Operations - Match 
+* filter records based on some criteria 
+* criteria are extremely flexible 
+* text match values or pattern
+* formulaic criteria on numeric fields 
+* combine critera on multiple fields
+---
+## DBMS Operations - Link 
+* complex databases contain multiple tables 
+* often want to combine fields across multiple talbes 
+* can use matching fields in multiple tables to link related records
+---
+## DBMS Operations - Aggregate 
+* often interested in summary information contained in a database 
+* typically applied to numeric fields 
+* operations like: MIN, MAX, SUM, AVERAGE, COUNT, etc.
+---
+## DBMS Operations - Arrange 
+* sometimes don't want to see all the columns in a table 
+* can hide or reorder columns as required 
+---
+## Characteristics of a DBMS 
+* self-describing 
+* insulation between programs and data 
+* support for multiple views of data 
+* sharing of data and multiuser system 
+* control of data redundancy 
+* enforcement of integrity constraints
+* access controls 
+* transcation processing 
+* backup and recovery 
+---
+## Self-describing
+* datbase contians data describing the structure of the database itself 
+* this is called *metadata* 
+* richer than what is possible with an ordinary file system alone
+---
+## Insulation Between Programs and Data 
+* applications only need high-level knowlege about logical structure of data 
+* DBMS manages low-level details about how the data is encoded and stored in the file system 
+---
+## Multiple Views of Data 
+* a view is virtual table based on the underlying physical tables 
+* when the underlying data changes, the data in the view changes 
+* a view can be restricted to a subset of data of interest 
+---
+## Sharing of Data and Mulituser System 
+* many users can access the data at the same time 
+* the DBMS manages this *concurrency* 
+* the DBMS ensures that data are correct and integrity is maintained 
+---
+## Control of Data Redundancy 
+* each data item is only stored in a single place
+* occasioanly data is duplicated for performance reasons
+* DBMS manages duplicates 
+* data can be repeated for the convenience of users through views 
+---
+## Enforcement of Integrity Constraints 
+* ensures that input data is valid 
+* various constraints such as format, data type, uniqueness
+---
+## Access Controls
+* not all users will have the same access privileges
+* typical privileges are: UPDATE, INSERT, DELETE
+* can be different for different users within a database 
+* can even be different for different fields within a table
+---
+## Transaction Processing
+* some integrity constraints may require multiple records in multiple tables to be updated simultaneously 
+* can define transactions to group related operations 
+* transaction manager ensures all or nothing execution of the operations in a transaction 
+* also sequences competing transactions from multiple users
+---
+## Backup and Recovery
+* backup: creating a copy of database at a particular point in time
+* recovery: restoring a database from a backup after a catastrophic failure
+					</textarea>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../revealjs/dist/reveal.js"></script>
+		<script src="../revealjs/plugin/notes/notes.js"></script>
+		<script src="../revealjs/plugin/markdown/markdown.js"></script>
+		<script src="../revealjs/plugin/highlight/highlight.js"></script>
+		<script src="../revealjs/plugin/math/math.js"></script>
+		<script src="../revealjs/plugin/mermaid/mermaid.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				mermaid: {},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ 
+					RevealMarkdown, 
+					RevealHighlight, 
+					RevealNotes, 
+					RevealMath.KaTeX,
+					RevealMermaid
+				]
+			});
+		</script>
+	</body>
+</html>
