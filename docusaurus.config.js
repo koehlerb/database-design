@@ -95,6 +95,11 @@ const config = {
             label: 'Slides',
           },
           {
+            href: '/labs',
+            position: 'left',
+            label: 'Labs',
+          },
+          {
             href: 'https://github.com/koehlerb/database-design',
             label: 'GitHub',
             position: 'right',
