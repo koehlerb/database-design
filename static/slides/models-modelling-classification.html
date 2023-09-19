@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Models, Modelling, and Classification of DBMS</title>
+
+		<link rel="stylesheet" href="../revealjs/dist/reset.css">
+		<link rel="stylesheet" href="../revealjs/dist/reveal.css">
+		<link rel="stylesheet" href="../revealjs/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+## Models, Modelling, and Classification of DBMS
+---
+## Outline
+* Models 
+* Modelleing 
+* Classification of DBMS
+---
+## Models
+* define the logical structure of a database
+* includes relationships and constraints
+* determines how data can be stored and accessed
+---
+## Well-known Models
+* Hierarchical
+* Network
+* Relational
+* Object 
+* Document 
+---
+## Hierarchical Model
+* oldest formal database model
+* data organized into a tree-like structure
+* records are nodes in the tree
+* every record has at most 1 parent 
+* every record may have multiple children
+---
+## Hierarchical Model 
+![Hierarchical Model](/img/Hierarchical_Model.svg)
+---
+## Hierarchichal Model - Advantages
+* fast and efficient retrieval
+* simple predictable structure
+* efficient storage
+* good performance
+---
+## Hierarchical Model - Disadvantages
+* 
+* 
+* 
+* 
+---
+## Network Model
+* records are nodes in a graph
+* records can have multiple parents
+* supports more types of relationships than the hierarchical model
+---
+## Network Model
+![Network Model](/img/Bachman_order_processing_model.png)
+
+<small><a href="https://commons.wikimedia.org/wiki/File:Bachman_order_processing_model.tiff">Mhkay</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</small>
+---
+## Relational Model
+* uses first-order predicate logic
+* data is represented in tuples
+* tuples grouped into relations
+* extremely popular model
+---
+## Relational Model 
+* Relation (or Table, or File)
+* Tuple (or Row, or Record)
+* Attribute (or Column, or Field)
+---
+## Relational Model 
+
+![Relational Model](https://upload.wikimedia.org/wikipedia/commons/8/8d/Relational_model_concepts.png)
+
+<small><a href="https://commons.wikimedia.org/wiki/File:Relational_model_concepts.png">User:AutumnSnow</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons</small> 
+---
+## Object Model
+* unit of information is the object
+* mirrors the use of objects in object oriented programming
+* tightly coupled with object oriented programming language
+* persist data from a running object-oriented program
+---
+## Document Model
+* model for semi-structured data
+* documents consist of key/value pairs
+* documents don't have to have all the same keys but may share some
+* key for each document
+* retrieval is by document key or individual keys within a document
+---
+## Data Modelling
+* Data Abstratction
+* Schemas
+* Logical and Physical Data Independence
+---
+## Data Abstraction
+* there are multiple levels of data abstraction
+* view (external)
+* logical (or conceptual)
+* internal (or physical)
+---
+## Database Abstraction
+
+![Database Abstraction](/img/database-abstraction.png)
+
+<small><a href="https://afteracademy.com/blog/what-is-data-abstraction-in-dbms-and-what-are-its-three-levels/">Database Abstraction</a></small>
+---
+## View or Conceptual Level
+* how the data looks to end users developers
+* typically implemented as a database view
+* does not necessarily correspond directly to logical design
+* e.g. end user wants a view combining columns from multiple tables
+* concern of 
+---
+## Logical or Conceptual Level
+* how the data is designed to be stored
+* optimized for minimizing redundancy and increasing efficiency
+* not necessarily how the user wants it
+* concern of DBMS administrator or designer
+---
+## Internal or Physical Level
+* how data are actually stored in files in the file system
+* low-level definition
+* tuned for efficient access considering the constraints of the operating system
+* concern of DBMS implentor/vendor
+---
+## Schemas
+* formal description of database structure
+* External: can be multiple depending needs of individual users
+* Conceptual: only one created by database designer
+* Physical: only one created by DBMS vendor
+---
+## Logical and Physical Data Independence
+* Logical: End users and developers should be immune to a change in the conceptual schema 
+* Physical: Conceptual schema should be immune to a change in the physical implementation of the DBMS
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+					</textarea>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../revealjs/dist/reveal.js"></script>
+		<script src="../revealjs/plugin/notes/notes.js"></script>
+		<script src="../revealjs/plugin/markdown/markdown.js"></script>
+		<script src="../revealjs/plugin/highlight/highlight.js"></script>
+		<script src="../revealjs/plugin/math/math.js"></script>
+		<script src="../revealjs/plugin/mermaid/mermaid.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				mermaid: {},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ 
+					RevealMarkdown, 
+					RevealHighlight, 
+					RevealNotes, 
+					RevealMath.KaTeX,
+					RevealMermaid
+				]
+			});
+		</script>
+	</body>
+</html>
