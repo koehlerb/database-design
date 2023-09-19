@@ -145,89 +145,91 @@
 * Logical: End users and developers should be immune to a change in the conceptual schema 
 * Physical: Conceptual schema should be immune to a change in the physical implementation of the DBMS
 ---
-## 
-* 
-* 
+## Classification of DBMS
+---
+## Classification of DBMS
+* data model
+* user numbers
+* distribution
+* license 
+* in-memory databases
+---
+## Data Model
+* Hierarchical: IMS
+* Network: IDS
+* Relational: MariaDB, PostgreSQL, Oracle, Microsoft SQL Server, MySQL
+* Object-oriented: ObjectStore
+* Document: MongoDB
+---
+## User Numbers
+* single-user: Microsoft Access
+* multi-user: everything else
+---
+## Distribution
+* When do we need more than one database server?
+---
+## Distribution
+* replication
+* sharding
+---
+## Distribution - Replication
+* used for load balancing
+* entire database is replicated on another computer
+* one server is the "Master"; others are "Slaves" 
+* works well when there are few writes and many reads
+---
+## Distribution - Sharding
+* used when there is more data than will fit on a single computer
+* there are no duplicates; entire database is spread accross several computers
+* can also be used for load balancing
+* works well for any access pattern (reads vs writes)
+---
+## License
+* propietary
+* open-source
 * 
 * 
 ---
-## 
-* 
-* 
-* 
-* 
+## Proprietary
+* software is protected through: copyright, patent, trade secrets
+* can only run the amount you pay for
+* e.g. Oracle, Microsoft SQL Server
 ---
-## 
-* 
-* 
-* 
-* 
+## Open-source
+* software is freely copyable
+* can run as many copies as you like
+* e.g. MariaDB, PostgreSQL, MongoDB
 ---
-## 
-* 
-* 
-* 
-* 
+## Proprietary vs. Open-source
+* discussion
 ---
-## 
-* 
-* 
-* 
-* 
+## Location
+* on-premises
+* cloud
 ---
-## 
-* 
-* 
-* 
-* 
+## Location - On-premises
+* own hardware
+* own data center
 ---
-## 
-* 
-* 
-* 
-* 
+## Location - Cloud
+* someone else's hardware
+* someone else's data center
 ---
-## 
-* 
-* 
-* 
-* 
+## On-premises vs. Cloud
+* discussion
 ---
-## 
-* 
-* 
-* 
-* 
+## In-memory databases
+* entire database is in main memory
+* not on secondary storage
+* access is orders of magnitude faster
+* e.g. Redis, memcached
 ---
-## 
-* 
-* 
-* 
-* 
+## Computer memory hierarchy 
+
+[Computer Memory Hierarchy](https://commons.wikimedia.org/wiki/File:ComputerMemoryHierarchy.svg)
 ---
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
+## DRAM vs. SDD vs. HDD
+* discussion
 					</textarea>
 				</section>
 
