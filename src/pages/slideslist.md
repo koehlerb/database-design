@@ -9,3 +9,4 @@ hide_table_of_contents: true
 * [Introduction](pathname:///slides/introduction.html)
 * [Fundamental Concepts](pathname:///slides/fundamental-concepts.html)
 * [Models, Modelling, and Classification of DBMS](pathname:///slides/models-modelling-classification.html)
+* [Relational Model](pathname:///slides/relational-model.html)
