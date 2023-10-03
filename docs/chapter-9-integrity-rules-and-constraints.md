@@ -408,6 +408,18 @@ erDiagram
 
 An occurrence of A is related to zero or more occurences of B (and vice versa).
 
+### Cardinality: Other
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    A }o--|| B : ""
+```
+
+An occurrence of A is related to exactly one occurence of B.
+
+An occurrence of B is related to zero or more occurences of A.
+
 ## Key Terms
 
 **business rules**: obtained from users when gathering
