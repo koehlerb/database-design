@@ -358,6 +358,56 @@ The way to read a relationship symbol, such as the one in Figure 9.16, is as fol
 
 *Figure 9.16. The relationship between a Customer
         table and an Order table, by A. Watt.*
+
+
+## Cardinality: Graphic Notation
+
+Innermost symbols on line connecting entities represents the minimum
+(either zero or one).
+
+Outermost symbols on line connecting entities represents the minimum
+(either one or many).
+
+### Cardinality: Zero or One
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    A |o--o| B : ""
+```
+
+An occurrence of A is related to zero or one occurences of B (and vice versa).
+
+### Cardinality: Exactly One
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    A ||--|| B : ""
+```
+
+An occurrence of A is related to one and only one occurence of B (and vice versa).
+
+### Cardinality: Zero or More
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    A }o--o{ B : ""
+```
+
+An occurrence of A is related to zero or more occurences of B (and vice versa).
+
+### Cardinality: One or More
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    A }|--|{ B : ""
+```
+
+An occurrence of A is related to zero or more occurences of B (and vice versa).
+
 ## Key Terms
 
 **business rules**: obtained from users when gathering

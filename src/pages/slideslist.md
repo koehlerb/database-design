@@ -10,3 +10,4 @@ hide_table_of_contents: true
 * [Fundamental Concepts](pathname:///slides/fundamental-concepts.html)
 * [Models, Modelling, and Classification of DBMS](pathname:///slides/models-modelling-classification.html)
 * [Relational Model](pathname:///slides/relational-model.html)
+* [Relationships, Integrity Rules, and Constraints](pathname:///slides/relationships-integrity-rules-constraints.html)
