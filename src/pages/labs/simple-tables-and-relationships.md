@@ -65,4 +65,62 @@ Enter 5 sample records into your new table.
 
 ## Relationships
 
-Coming next week ...
+### In-class
+
+Follow the in-class instructions to implement the following
+tables and relationships.
+
+High-level model:
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    FLIGHT }o--o{ PASSENGER : "books"
+```
+
+Implementation (table-level) model:
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    FLIGHT ||--o{ BOOKING : ""
+    BOOKING }o--|| PASSENGER : ""
+```
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    FLIGHT ||--o{ BOOKING : ""
+    BOOKING }o--|| PASSENGER : ""
+    FLIGHT {
+        int ID PK
+        varchar origin
+        varchar destination
+        time time
+    }
+    BOOKING {
+        int flightID PK,FK
+        int passengerID PK,FK
+        varchar seat
+    }
+    PASSENGER {
+        int ID PK
+        varchar name
+    }
+```
+
+### On Your Own
+
+Create the tables and some sample data (at least 5 records in each
+table) for a hair salon based on the
+following high-level model.
+
+```mermaid
+%%{init: {'er': {'layoutDirection': 'LR'}}}%%
+erDiagram
+    CUSTOMER ||--o{ APPOINTMENT : "books"
+```
+
+Be sure to create the appropriate primary and foreign keys. Also, 
+be sure to add any additional attributes to the tables that 
+seem relevant.
