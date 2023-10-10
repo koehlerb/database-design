@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>ER Modelling and Functional Dependencies</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+## ER Modelling
+---
+## Outline
+* Relational Design and Redundancy
+* Insertion Anomaly
+* Update Anomaly 
+* Deletion Anomaly 
+* Avoiding Anomalies
+---
+## Relational Design and Redundancy
+* most databases can be implemented as a single giant table
+* creates the problem of repeated information
+* with a single large table various anomalies are possible
+* solution is to split the data into multiple tables to minimize redundancy
+---
+## Insert Anomaly
+* inserting a new record into a large table
+* redundant data is not repeated consistently
+---
+## Update Anomaly
+* change one record in large table
+* redundant data in other records is not updated as well
+---
+## Deletion Anomaly
+* delete one record in a large table
+* deleted record was the only one containing information about an entity
+* that information is lost for ever
+---
+## Avoding Anomalies
+* solution is to minimize redundancy
+* achieved by dividing larger tables into smaller ones
+* systematic process for dividing tables is called normalizaion
+* based on functional dependencies between attributes
+---
+## Fuctional Dependencies
+---
+## Outline
+* Definition
+* Inference Rules
+---
+## Functional Dependency
+* attribute $Y$ is dependent on attribute $Y$ if for every valid instance of $X$ that value of $X$ uniquely determines the value of $Y$ 
+* notation: $X \longrightarrow Y$
+* left side is the *determinant* 
+* right side is the *dependent*
+---
+## Inference Rules
+* Axiom of reflexivity
+* Axiom of augmentation
+* Axiom of transitivity 
+* Union 
+* Decomposition
+---
+## Axiom of reflexivity
+* If $Y \subseteq X$, then $X \longrightarrow Y$
+* e.g. if we have attributes FirstName, LastName, Height, Weight then:
+* $FirstName, LastName, Height, Weight \longrightarrow LastName, Height$
+* $FirstName, LastName, Height, Weight \longrightarrow FirstName, Weight$
+* etc.
+---
+## Axiom of augmentation
+* If $X \longrightarrow Y$, then $X Z \longrightarrow Y Z$ for any $Z$
+---
+## Axiom of transitivity
+* If $X \longrightarrow Y$ and $Y \longrightarrow Z$, then $X \longrightarrow Z$
+* e.g. if 
+$StudentID \longrightarrow Name, ProgramID$ <br />
+ and $ProgramID \longrightarrow ProgramName$, <br />
+ then $StudentID \longrightarrow Name, ProgramName$
+---
+## Union
+* If $X \longrightarrow Y$ and $X \longrightarrow Z$, then $X \longrightarrow Y Z$ 
+---
+## Decomposition
+* reverse of the union rule
+					</textarea>
+				</section>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				mermaid: {},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ 
+					RevealMarkdown, 
+					RevealHighlight, 
+					RevealNotes, 
+					RevealMath.KaTeX,
+					RevealMermaid
+				]
+			});
+		</script>
+	</body>
+</html>

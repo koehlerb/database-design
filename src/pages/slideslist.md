@@ -11,3 +11,4 @@ hide_table_of_contents: true
 * [Models, Modelling, and Classification of DBMS](pathname:///slides/models-modelling-classification.html)
 * [Relational Model](pathname:///slides/relational-model.html)
 * [Relationships, Integrity Rules, and Constraints](pathname:///slides/relationships-integrity-rules-constraints.html)
+* [ER Modelling and Functional Dependencies](pathname:///slides/er-modelling-functional-dependencies.html)
