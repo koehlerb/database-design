@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Normalization</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+## Normalization
+---
+## Outline
+* Normal forms
+* First normal form (1NF)
+* Second normal form (2NF)
+* Third normal form (3NF)
+* Boyce-Codd normal form (BCNF)
+---
+## Normal Forms
+* *Normalization* is the process of identifying the level of redundancy in a table design
+                        and then dividing the table to correct for it
+* we can use functional dependencies to assess which normal form a table is in
+* there are six standard normal forms
+* the last two are pretty esoteric so we only consider the first four
+---
+## First normal form (1NF)
+* a relation is in 1NF if it has no mulit-valued attributes
+---
+## Getting to 1NF
+* if a relation is not in 1NF, for each record with a muti-valued attribute, split
+                            into a record for each of the values
+---
+## Second normal form (2NF)
+* a relation is in 2NF if, and only if:
+    * it is 1NF, and
+    * the primary key is a single attribute OR all non-key attributes are dependent on
+                        the the entire primary key if it is composite
+---
+## Getting to 2NF
+* if a relation is not in 2NF:
+    1. get to 1NF
+    2. for each non-key attribute that is dependent on part of the primary key: 
+        1. remove that non-key attribute from the relation
+        2. create a new relation with that non-key attribute and its determinant  
+---
+## Third normal form (3NF)
+* a relation is in 3NF if, and only if:
+    * it is in 2NF, and
+    * no non-key attribute is functionally dependent on any other non-key attribute 
+---
+## Getting to 3NF
+* if a relation is not in 3NF:
+    1. get to 2NF 
+    2. for each non-key attriubute that is dependent on another non-key attribute: 
+        1. remove the depenent non-key attribute form the relation 
+        2. create a new relation with that non-key attribute and its determinant 
+---
+## Boyce-Codd Normal Form (BCNF)
+* a relation is in BCNF if, and only if: 
+    * it is in 3NF, and 
+    * every determinant is a superkey
+* it is extremely rare that a relation is in 3NF and not in BCNF
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+					</textarea>
+				</section>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				mermaid: {},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ 
+					RevealMarkdown, 
+					RevealHighlight, 
+					RevealNotes, 
+					RevealMath.KaTeX,
+					RevealMermaid
+				]
+			});
+		</script>
+	</body>
+</html>
