@@ -13,3 +13,5 @@ hide_table_of_contents: true
 * [Relationships, Integrity Rules, and Constraints](pathname:///slides/relationships-integrity-rules-constraints.html)
 * [ER Modelling and Functional Dependencies](pathname:///slides/er-modelling-functional-dependencies.html)
 * [Normalization](pathname:///slides/normalization.html)
+* [Database Development Process](pathname:///slides/database-development-process.html)
+

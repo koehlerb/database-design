@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Database Development Process</title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					<textarea data-template>
+## Database Development Process
+---
+## Outline
+* Software Development Life Cycle
+* Database Life Cycle
+* Requirements Gathering
+* Analysis
+* Logical Design
+---
+## Outline
+* Implementation
+* Realizing the Design
+* Populating the Database
+* Guidelines for ER Diagrams
+---
+## Software Development Life Cycle
+* Waterfall (traditional)
+* Agile (contemporary)
+---
+## Waterfall SDLC
+* Requirements Gathering
+* Analysis
+* Design
+* Implementation
+* Testing 
+* Deployment
+* Maintenance
+---
+## Requirements Gathering
+* consultation with stakeholders
+* interviews
+* outcome is statement of requirements
+---
+## Analysis
+* review statement of requirements
+* determine what system should do (not how)
+* outcome is a formal specification of the features of the system 
+---
+## Design
+* begins with the system specification
+* detailed description of *how* the system should be constructed
+---
+## Implementation
+* construction of a working system based on the design
+* takes into account specific environment:
+    * hardware
+    * operating system
+    * programming language 
+---
+## Testing
+* compares implemenation against system specification
+* outcome is an acceptance report listing outstanding errors or bugs
+* potentially involves re-work of analysis, design, and/or implementation
+---
+## Deployment
+* making built system available to end users
+---
+## Maintenance
+* implementing new features
+* fixing bugs
+* porting system to new environment
+---
+## Waterfall Risks
+* each phase is completed in its entirety before moving to the next phase
+* except possibly after testing
+* high risk because a lot of up front effort is required before you get a working system
+---
+## Agile SDLC
+* intended to minimize risks assocaited with waterfall SDLC
+* has all of the same elements of the Waterfall SDLC
+* doesn't try to specify the entire system up front
+* only deal with a handful of features from start to finish over a very short amount of time
+* have a working system at the end of each cycle
+---
+## Database Life Cycle
+* can be similar to Waterfall SDLC
+* Requirements
+* Analysis
+* Logical Design
+* Implementation
+---
+## Requirements Gathering
+* interview stakeholders
+* understand what data needs to be stored
+* understand meaning and interpretation of that data
+* what are the data items, attributes, constraints, and relationships
+* outcome is a data requirements document
+---
+## Analysis
+* begins with data requirements document
+* produces a conceptual data model
+* can incude defintion of data domains
+* conceptual model will be used by database designers
+* describes precisely what is required
+---
+## Logical Design
+* starts with conceptual design
+* produces a logical schema
+* often a relational representation of conceptual model
+* output is a detailed relational specification
+* all tables and all constraints
+---
+## Implementation
+* construction of database according to logical schema
+* heavily influenced by selected DBMS
+* need to set up roles and security
+* often DBMS has been selected in advance
+---
+## Realizing the Design
+* execute the SQL DDL statements
+---
+## Populating the Database
+* end users use applications for the database
+* import external data directly (bulk load)
+---
+## Guidelines for ER Diagrams
+* document all entities
+* document all attributes
+* select candidate and primary keys
+* develop initial ER diagram
+* normalize tables
+					</textarea>
+				</section>
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				mermaid: {},
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ 
+					RevealMarkdown, 
+					RevealHighlight, 
+					RevealNotes, 
+					RevealMath.KaTeX,
+					RevealMermaid
+				]
+			});
+		</script>
+	</body>
+</html>
