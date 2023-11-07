@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Database Development Process</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+## Introduction to SQL
+---
+## Outline
+* Overview of Programming Languages
+* Overview of SQL
+* SQL Sublanguages
+---
+## Progamming Language Generations
+* Machinge Language (1GL)
+* Assembly Lanugage (2GL)
+* Machine Independent (3GL)
+* Domain Specific (4GL)
+---
+## Machine Language (1GL)
+* binary codes specific to a particular CPU instruction set
+* these codes can be executed by the CPU directly
+---
+## Machine Language (1GL)
+```txt
+1 0 1 0 1 1 1 0 1 1 1 0 1 0 1 1 1 0 1 1 0 1 1 1 1 1 1 1 0 0 
+1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 0 1 0 0 1 1 1 1 1 1 1 0 0 
+0 0 0 0 1 1 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 1 1 1 1 1 1 1 0 0 
+0 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 0 0 
+1 0 1 0 1 1 1 0 1 1 1 0 1 0 1 1 1 0 1 1 0 1 1 1 1 1 1 1 0 0 
+1 1 1 0 0 1 1 0 1 0 1 1 1 0 0 1 1 0 1 0 0 1 1 1 1 1 1 1 0 0 
+0 0 0 0 1 1 0 0 0 1 0 0 0 0 1 1 0 0 0 1 0 1 1 1 1 1 1 1 0 0 
+0 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 0 0 
+```
+---
+## Assembly Language (2GL)
+* Mnemonic codes correpsonding machine language instructions
+* still specific to a particular CPU
+* the codes must be translated into machine languge by an *Assembler*
+---
+## Assembly Language (2GL)
+```x86asm
+_start:
+        mov     $1, %rax 
+        mov     $1, %rdi
+        mov     $message, %rsi
+        mov     $13, %rdx
+        syscall 
+
+        mov     $60, %rax
+        xor     %rdi, %rdi
+        syscall
+message:
+        .ascii  "Hello, world\n"
+```
+---
+## Machine Independent Language (3GL)
+* Formal language independent of a particular CPU
+* the codes must be translated to assembly language (or machine language) by an 
+            *Interpreter* or *Compiler*
+---
+## Machine Independent Language (3GL)
+```python 
+print( "i", "i squared")
+
+for i in range(10):
+	print( i, i*i )
+```
+---
+## Domain Specific Language (4GL)
+* higher level of abstraction than 3GL
+* code expresses "what" not "how"
+* the codes must be translated to assembly language (or machine language) by an 
+            *Interpreter* or *Compiler*
+---
+## Domain Specific Language (4GL)
+```sql 
+CREATE TABLE EMPLOYEES (
+  EmployeeNo        CHAR(10)    NOT NULL    UNIQUE,
+  DepartmentName    CHAR(30)    NOT NULL    DEFAULT "Human Resources",
+  FirstName         CHAR(25)    NOT NULL,
+  LastName          CHAR(25)    NOT NULL,
+  Category          CHAR(20)    NOT NULL,
+  BirthDate         DATE        NOT NULL,
+  CollegeDegree     CHAR(5)     NOT NULL, 
+  CONSTRAINT        Employee_PK    PRIMARY KEY(EmployeeNo)
+);
+```
+---
+## Structured Query Language (SQL)
+* SQL is a 4GL
+* standard language for interfacing with RDBMS
+* introduced in the 1970s
+* based on the relational algebra
+* SQL statements come from one of 5 sublanguages
+---
+## SQL Sublanguages
+* DDL (Data Defintion Language)
+* DQL (Data Query Language)
+* DML (Data Manipulation Language)
+* DCL (Data Control Language)
+* TCL (Transaction Control Language)
+---
+## DDL (Data Defintion Language)
+* statments used to define the database schema
+* used to create, modify, and delete database structures
+* not used to affect data
+* these statements are typically used by the database administrator or designer
+* not normally used by general database users
+---
+## DDL Statements
+* CREATE (database or table)
+* DROP (database or table)
+* ALTER (database or table)
+* TRUNCATE (table)
+---
+## CREATE DATABASE
+```sql 
+CREATE DATABASE Daycare;
+```
+---
+## CREATE TABLE
+```sql 
+CREATE TABLE `Child` (
+ `ID` int(11) NOT NULL AUTO_INCREMENT,
+ `FirstName` varchar(20) NOT NULL,
+ `LastName` varchar(20) NOT NULL,
+ `DOB` date NOT NULL,
+ PRIMARY KEY (`ID`)
+)
+```
+---
+## DROP DATABASE
+```sql 
+DROP DATABASE Daycare;
+```
+---
+## DROP TABLE
+```sql 
+DROP TABLE Child;
+```
+---
+## TRUNCATE TABLE
+* is equivalent to a DROP TABLE immediately followed by a CREATE TABLE with the same structure
+* more efficient than deleting the individual records from the table
+---
+## TRUNCATE TABLE
+```sql 
+TRUNCATE TABLE Child;
+```
+---
+## ALTER TABLE
+* can be used to add, remove, or modify columns
+* more importantly can be used to add constraints that are not possible direcly using phpMyAdmin
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        mermaid: {},
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>
