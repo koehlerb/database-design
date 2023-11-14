@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>SQL Data Manipulation Language (DML)</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+## SQL Data Manipulation Language (DML)
+---
+## DML Statements
+* INSERT
+* UPDATE
+* DELETE
+* 
+---
+## INSERT Statement
+* insert rows into existing table
+* best practice is give column order template and then rows
+---
+## INSERT Statement
+```sql 
+INSERT INTO Player
+(name, height, weight)
+VALUES
+('Alice', 175, 70),
+('Bob', 192, 90),
+('Carol', 150, 60 );
+```
+---
+## DELETE Statement
+* deletes rows from the named table 
+* whithout a `WHERE` clause, it deletes all the rows
+* the `TRUNCATE TABLE` statment is a faster way to delete all rows
+---
+## DELETE Statement
+```sql
+DELETE FROM Player; -- deletes all records
+```
+---
+## DELETE Statement
+```sql
+DELETE FROM Player 
+WHERE height < 180;
+```
+---
+## UPDATE Statement
+* updates columns of existing rows of the named table
+* each value can be given as an expression
+* without a `WHERE` clause, all rows are updated
+---
+## UPDATE Statement
+```sql 
+-- adds $10,000 to every player's salary
+UPDATE Player
+SET salary = salary + 10000;
+```
+---
+## UPDATE Statement
+```sql 
+UPDATE Player
+SET height=177,weight=70
+WHERE id = 123;
+```
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        mermaid: {},
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>

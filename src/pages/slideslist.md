@@ -15,3 +15,6 @@ hide_table_of_contents: true
 - [Normalization](pathname:///slides/normalization.html)
 - [Database Development Process](pathname:///slides/database-development-process.html)
 - [Introduction to SQL](pathname:///slides/sql-intro.html)
+- [Regular Expressions](pathname:///slides/regex.html)
+- [SQL Data Manipulation Language (DML)](pathname:///slides/dml.html)
+- [SQL Data Query Language (DQL)](pathname:///slides/dql.html)

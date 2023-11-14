@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Regular Expressions</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+## Regular Expressions
+---
+## Ordinary Characters
+* ordinary characters in the pattern match ordinary characters in the string
+* a sequence of ordinary characters in the pattern match the same sequence in the string
+---
+## Ordinary Characters
+pattern: 
+```text 
+ter
+```
+
+sample matching strings:
+```text
+terminal
+oyster
+stereo 
+```
+---
+## Beginning of String
+* the special character `^` matches the beginging of the string
+---
+## Beginning of String
+pattern: 
+```text 
+^ter
+```
+
+sample matching strings:
+```text
+terminal
+terrible
+terific
+```
+---
+## End of String
+* the special character `$` matches the end of the string
+---
+## End of String
+pattern: 
+```text 
+ter$
+```
+
+sample matching strings:
+```text
+oyster
+disaster
+coaster
+```
+---
+## Combining Beginning and End of String Characters
+pattern: 
+```text 
+^dog$
+```
+
+only matching string:
+```text
+dog
+```
+---
+## Any Single Character
+* the special character `.` matches any single character
+---
+## Any Single Character
+pattern: 
+```text 
+^...er$
+```
+
+sample matching strings:
+```text
+oyster
+123ter
+!@#ter
+```
+---
+## Zero or More
+* the special character `*` matches zero or more occurrences of the preceding character or group
+---
+## Zero or More
+pattern: 
+```text 
+^lo*ng$
+```
+
+sample matching strings:
+```text
+lng
+long
+looooooooooooooooooong
+```
+---
+## One or More
+* the special character `+` matches one or more occurrences of the preceding character or group
+---
+## One or More
+pattern: 
+```text 
+^lo+ng$
+```
+
+sample matching strings:
+```text
+long
+looong
+looooooooooooooooooong
+```
+---
+## Zero or One 
+* the special character `?` matches zero or one occurrences of the preceding character or group
+---
+## Zero or One
+pattern: 
+```text 
+^lo?ng$
+```
+
+sample matching strings:
+```text
+lng
+long
+```
+---
+## Specific Number of Occurrences
+* the special characters `{}` can be used to express a specific number of occurrences of the preceding character or group
+* `{m}` - exactly `m` occurrences
+* `{m,n}` - betweem `m` and `n` occurrences
+* `{m,}` - at lease `m` occurrences
+---
+## Specific Number of Occurrences
+pattern: 
+```text 
+^lo{2,5}ng$
+```
+
+sample matching strings:
+```text
+loong
+looong
+loooong
+looooong
+```
+---
+## Grouping
+* by default, `*`, `+`, `?`, and `{}` work on the preceding character 
+* if they immediately follow a sequence of characters grouped in `()`, then they work on the whole group
+---
+## Grouping
+pattern: 
+```text 
+^l(ong){2,4}$
+```
+
+sample matching strings:
+```text
+longong
+longongong
+longongongong
+```
+---
+## Character Class
+* characters appearing inside `[]` create a character class 
+* the pattern means any one of the characters in the class
+---
+## Character Class
+pattern: 
+```text 
+^b[iau]t$
+```
+
+sample matching strings:
+```text
+bit
+bat
+but 
+```
+---
+## Character Class
+* character classes can also have charcter ranges such as `[0-9]` or `[a-zA-Z]`
+* character classes can also have the `^` character meaning the opposite
+* e.g. `[^iau]` means any character except i, a, or u 
+---
+## Examples
+* What is the pattern for a Canadian postal code?
+* What is the pattern for a NIC course subject code?
+* What is the pattern for a NIC course number?
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        mermaid: {},
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>

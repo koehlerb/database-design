@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>SQL Data Query Language (DQL)</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+## SQL Data Query Language (DQL)
+---
+## DQL Statement
+* SELECT
+---
+## Relational Algebra
+* Set operations (union, difference, Cartesian product)
+* Projection
+* Selection
+* Aggregation
+* Join
+* Rename
+---
+## Projection
+* presents a subset of the attributes of a relation
+* depending on the data, may produce duplicate rows
+* duplicates, can be eliminated using the `DISTINCT` keyword
+* `*` represents all the attributes
+---
+## Projection
+```sql 
+SELECT first_name, gender
+FROM employees;
+```
+---
+## Distinct Projection
+```sql 
+SELECT DISTINCT first_name, gender
+FROM employees;
+```
+---
+## Selection
+* presents a subset of tuples of a relation 
+* uses `WHERE` clause to specify criteria
+* often used in conjunction with a projection operation
+---
+## Selection
+```sql 
+SELECT first_name, last_name
+FROM employees 
+WHERE birth_date > "1960-01-01"
+```
+---
+## Aggregation
+* computes a function on a column
+* count, sum, average, minimum, maximum
+* can be calculated over entire table, or distinct groups of attributes
+* often used in conjuntion with selection to work on a subset of rows
+---
+## Aggregation 
+```sql 
+SELECT MAX(salary) 
+FROM salaries; 
+---
+## Aggregation 
+```sql 
+SELECT MIN(salary) 
+FROM salaries
+WHERE from_date LIKE "1986%"; 
+---
+## Aggregation with Grouping
+```sql 
+SELECT MAX(salary) 
+FROM salaries
+GROUP BY YEAR(from_date); 
+---
+## Aggregation with Grouping
+```sql 
+SELECT YEAR(from_date), MAX(salary)
+FROM salaries
+GROUP BY YEAR(from_date); 
+---
+## Aggregation with Grouping
+```sql 
+SELECT YEAR(from_date), MAX(salary), COUNT(*) 
+FROM salaries
+GROUP BY YEAR(from_date); 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+* 
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        mermaid: {},
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>
