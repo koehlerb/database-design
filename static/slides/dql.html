@@ -86,86 +86,40 @@ WHERE birth_date > "1960-01-01"
 ```sql 
 SELECT MAX(salary) 
 FROM salaries; 
+```
 ---
 ## Aggregation 
 ```sql 
 SELECT MIN(salary) 
 FROM salaries
 WHERE from_date LIKE "1986%"; 
+```
 ---
 ## Aggregation with Grouping
 ```sql 
 SELECT MAX(salary) 
 FROM salaries
 GROUP BY YEAR(from_date); 
+```
 ---
 ## Aggregation with Grouping
 ```sql 
 SELECT YEAR(from_date), MAX(salary)
 FROM salaries
 GROUP BY YEAR(from_date); 
+```
 ---
 ## Aggregation with Grouping
 ```sql 
 SELECT YEAR(from_date), MAX(salary), COUNT(*) 
 FROM salaries
 GROUP BY YEAR(from_date); 
+```
 ---
-## 
-* 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
-* 
+## Joins
+* Inner
+* Left Outer
+* Right Outer
 					</textarea
           >
         </section>
