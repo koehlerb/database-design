@@ -91,125 +91,25 @@ SET balance = balance - 500
 WHERE name = 'Bob';
 ```
 ---
-## 
-* 
-* 
-* 
-* 
+## Transactions in MariaDB
+* individual DML statements are a transaction
+* if you want multiple statements to be a transaction, you have to group them in a START TRANSACTION ... COMMIT block
+* if you discover a problem in the middle of a transaction, you can undo it with a ROLLBACK statement instead of COMMIT
 ---
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
----
-## 
-* 
-* 
-* 
-* 
+## Example
+```sql 
+START TRANSACTION
+
+UPDATE Account 
+SET balance = balance + 500
+WHERE name = 'Alice';
+
+UPDATE Account 
+SET balance = balance - 500
+WHERE name = 'Bob';
+
+COMMIT
+```
 					</textarea
           >
         </section>
