@@ -18,3 +18,5 @@ hide_table_of_contents: true
 - [Regular Expressions](pathname:///slides/regex.html)
 - [SQL Data Manipulation Language (DML)](pathname:///slides/dml.html)
 - [SQL Data Query Language (DQL)](pathname:///slides/dql.html)
+- [SQL Joins](pathname:///slides/joins.html)
+- [Transactions](pathname:///slides/transactions.html)

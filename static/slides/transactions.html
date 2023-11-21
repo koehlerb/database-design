@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Transactions</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+## Transactions
+---
+## Tranasactions
+* ACID Properties
+* START TRANSACTION
+* COMMIT
+* ROLLBACK
+---
+## ACID Properties
+* Atomicity
+* Consistency
+* Isolation
+* Durability
+---
+## Atomicity
+* a sequence of operations are treated as a single operation
+* the sequence either fails completely or succeeds completely
+* if the transaction fails the database is unchanged
+---
+## Consistency
+* transactions always preserve database invariants
+* all constratints that were true before the transaction are still true after the transaction
+---
+## Isolation
+* transactions may execute concurrently
+* the database is always in a state as if the statements had executed sequentially
+* usually, partial completed transactions are not visible to other transactions
+---
+## Durability
+* once committed a transaction stays committed even in the event of a system failure
+* completed transactions must be recorded in non-volatile memory
+---
+## Example: Updating a record
+```sql 
+UPDATE Employee 
+SET salary = salary + 10000
+WHERE name = 'Alice';
+```
+---
+## Example: Transferring money from one bank acccount to another
+id|name |balance
+--|-----|-------
+01|Alice|1000
+02|Bob  |2500
+---
+## Example: Transferring money continued
+```sql 
+UPDATE Account 
+SET balance = balance + 500
+WHERE name = 'Alice';
+
+-- what if the system fails here
+
+UPDATE Account 
+SET balance = balance - 500
+WHERE name = 'Bob';
+```
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+---
+## 
+* 
+* 
+* 
+* 
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        mermaid: {},
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>

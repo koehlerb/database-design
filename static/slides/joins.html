@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>SQL Joins</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+## SQL Joins
+---
+## Joins
+* Cartesian Product
+* Inner
+* Left Outer
+* Right Outer
+* Full Outer
+---
+## Cartesian Product
+* every row in one table is joined to every row in the other tabe
+* sometimes referred to as CROSS JOIN
+* implemented in MariaDB with tables separated by a commar or JOIN operator with no ON clause
+---
+## Cartesian Product
+```sql 
+SELECT * FROM Book, Author;
+```
+
+or 
+
+```sql 
+SELECT * FROM Book JOIN Author;
+```
+---
+## Inner Join
+* each row in the result set combines values from one row in each table that match on some column
+---
+## Inner Join
+```sql 
+SELECT * FROM Book, Author
+WHERE Book.authorid = Author.id;
+```
+
+or (preferred)
+
+```sql 
+SELECT * FROM Book JOIN Author
+ON Book.authorid = Author.id;
+```
+---
+## Left Outer Join
+* also includes rows from the left table that don't have a match in the right table
+---
+## Left Outer Join
+```sql 
+SELECT * FROM Book LEFT JOIN Author
+ON Book.authorid = Author.id;
+```
+---
+## Right Outer Join
+* also includes rows from the right table that don't have a match in the left table
+---
+## Left Outer Join
+```sql 
+SELECT * FROM Book RIGHT JOIN Author
+ON Book.authorid = Author.id;
+```
+---
+## Full Outer Join 
+* includes rows from both left and right tables that don't have matches in the other tables
+* there is no direct FULL OUTER JOIN operator in MariaDB
+* must be synthesized using the UNION of a LEFT JOIN and a RIGHT JOIN
+---
+## Full Outer Join
+```sql 
+SELECT * FROM Book LEFT JOIN Author
+ON Book.authorid = Author.id
+UNION
+SELECT * FROM Book RIGHT JOIN Author
+ON Book.authorid = Author.id;
+```
+---
+## Combining Joins and Projection
+* usually use table aliases to shorten the list of projected columns
+* underlying data comes from all the attributes from both of the tables
+---
+## Combining Joins and Projection
+```sql 
+SELECT b.title, a.name 
+FROM Book b LEFT JOIN Author a
+ON b.authorid = a.id;
+```
+---
+## Combining Joins and Projection and Selection
+* give the first and last names of all actors that have starred in an NC-17 film
+---
+## Combining Joins and Projection and Selection
+* give the first and last names of all actors that have starred in an NC-17 film
+```sql 
+SELECT UNIQUE a.first_name, a.last_name
+FROM `film` f 
+JOIN film_actor fa ON f.film_id = fa.film_id 
+JOIN actor a ON a.actor_id = fa.actor_id
+WHERE f.rating = "NC-17";
+```
+---
+## Combining Joins and Projection and Selection and Aggregation
+* how many NC-17 films has each actor starred in?
+---
+## Combining Joins and Projection and Selection and Aggregation
+* how many NC-17 films has each actor starred in?
+```sql 
+SELECT COUNT(*), a.first_name, a.last_name
+FROM `film` f 
+JOIN film_actor fa ON f.film_id = fa.film_id 
+JOIN actor a ON a.actor_id = fa.actor_id
+WHERE f.rating = "NC-17" 
+GROUP BY a.first_name, a.last_name;
+```
+---
+## Creating Views
+* you can name a complex SELECT statement with a view
+---
+## Creating Views
+```sql 
+CREATE VIEW TitleAuthor AS
+SELECT b.title, a.name 
+FROM Book b LEFT JOIN Author a
+ON b.authorid = a.id;
+```
+---
+## Example #1
+Produce a list of customer email addresses along with the name of the city they live in. 
+---
+## Example #2
+Produce a list of film titles along with the number of times they have been rented.
+---
+## Example #3
+Produce a list of stores  and the number of items in their inventory.
+---
+## Example #4
+Produce a list of customer email addresses along with the number of "PG" films they have rented.
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        mermaid: {},
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>
