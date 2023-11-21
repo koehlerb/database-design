@@ -20,3 +20,4 @@ hide_table_of_contents: true
 - [SQL Data Query Language (DQL)](pathname:///slides/dql.html)
 - [SQL Joins](pathname:///slides/joins.html)
 - [Transactions](pathname:///slides/transactions.html)
+- [SQL Data Control Language (DCL)](pathname:///slides/dcl.html)
