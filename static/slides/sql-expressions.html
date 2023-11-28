@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>SQL Expressions</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+## SQL Expressions
+---
+## SQL Expressions
+* SELECT Expressions
+* WHERE Conditions
+---
+## SELECT Expression
+* any expression that can produce a column in a SELECT statement
+  * any scalar literal
+  * any column identifier (in a SELECT statement with a FROM clause)
+  * any combination of the above using operators and functions
+  * any subquery
+---
+## Scalar Literal
+* number: -10, 20, 3.14, ...
+* string: 'dog', 'cat', 'house', ...
+* date: '2023-11-27'
+* time: '13:27:49.34321'
+* datetime: '2023-11-27 13:27:49.34321'
+---
+## Column Identifiers
+* just the column name if no ambiguity: height
+* qualified with table name or alias: Player.height (or p.height) 
+---
+## Operators
+* Arithmetic
+* Comparison
+* Logical
+---
+## Arithmetic Operators
+* +, -, *, /
+* % (remainder)
+* DIV (integer division)
+---
+## Comparison Operators
+* =, !=, <, >, <=, >=
+* LIKE
+* REGEXP
+---
+## Logical Operators
+* ! (logical not)
+* && (logical and)
+* || (logical or)
+* XOR (logical exclusive or)
+---
+## Operator examples
+```sql
+f.length * f.width 
+p.height < 180
+e.role = 'manager' && e.salary > 50000
+```
+---
+## Operator example
+```sql
+SELECT length * width AS area, 2*(length+width) AS perimeter
+FROM frame;
+```
+---
+## Functions
+* too many to list!
+* see MariaDB Function and Operator Reference
+---
+## Subqueries
+* a SELECT statment that is part of another SELECT statement 
+```sql
+SELECT title, rental_rate
+FROM film
+WHERE rental_rate > (SELECT avg(rental_rate) FROM film);
+```
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        mermaid: {},
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>

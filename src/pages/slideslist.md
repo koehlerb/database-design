@@ -21,3 +21,5 @@ hide_table_of_contents: true
 - [SQL Joins](pathname:///slides/joins.html)
 - [Transactions](pathname:///slides/transactions.html)
 - [SQL Data Control Language (DCL)](pathname:///slides/dcl.html)
+- [SQL Expressions](pathname:///slides/sql-expressions.html)
+- [NoSQL Databases](pathname:///slides/nosql.html)

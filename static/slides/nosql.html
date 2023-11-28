@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>NoSQL Databases</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reset.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/theme/black.css"
+    />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/monokai.css"
+    />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
+## NoSQL Databases
+---
+## NoSQL Databases
+* technically, any database that is not relational
+* common NoSQL database types:
+  * key-value store
+  * object database
+  * document store 
+  * wide-column store 
+  * graph data
+---
+## NoSQL Database Characteristics
+* high performance 
+* high scalability
+* high flexibility
+* basic functionality 
+* may not be ACID, implement joins, etc.
+---
+## Key-Value Store
+* database is a colection of pairs
+* value is opaque
+* storage and retrival by key 
+* may be able to sort data by key
+* in-memory implemention is called key-value cache (e.g. Redis)
+---
+## Object Database
+* provides a perstistent store for data for applications implemented in object-orient programming languages
+* structure mirrors that of objects in the language
+* supports complex relationships
+---
+## Document Store
+* sub-type of key-value store
+* value is not totally opaque
+* storage and retrieval by key 
+* may be able to sort data by key
+* typical encoded as XML, YAML, or JSON 
+* may be able to query on value meta-data (structured content)
+---
+## Wide-Column Store
+* key-value store
+* key is a stuctured pair (row,column)
+* names and format of the colums vary from row to wor
+---
+## Graph Database
+* used in scenarios where relationships are best represented as a graph or network
+* e.g. social graph, public transit, road networks, computer networks, etc.
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/highlight/highlight.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.3.1/plugin/math/math.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@2.0.0/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        mermaid: {},
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
+</html>
