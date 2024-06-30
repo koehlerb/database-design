@@ -83,7 +83,7 @@ model data. By *atomic value*, we
     example:
 
 * The domain of Marital Status has a set of possibilities: Married, Single, Divorced.
-* The domain of Shift has the set of all possible days: {Mon, Tue, Wed…}.
+* The domain of Shift has the set of all possible days: Mon, Tue, Wed, ...
 * The domain of Salary is the set of all 
     floating-point numbers greater than 0 and less than 200,000.
 * The domain of First Name is the set of character 

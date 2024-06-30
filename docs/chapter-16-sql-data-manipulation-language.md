@@ -123,7 +123,7 @@ FROM Sales
 WHERE qty BETWEEN 20 and 50;  /* (includes the 20 and 50) */
 ```
 
-Example #2, on the other hand, uses *qty >= 20 and qty <= 50*.
+Example #2, on the other hand, uses *qty \>\= 20 and qty \<\= 50*.
 
 ```sql
 SELECT StorID, qty, TitleID  

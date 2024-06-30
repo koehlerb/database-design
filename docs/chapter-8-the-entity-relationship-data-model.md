@@ -195,7 +195,7 @@ Some of these are to be left as is, but
 they are also called
     *single-valued attributes*. In the COMPANY database, an example 
     of this would be: Name =
-    {John} ; Age = {23}
+    \{John\} ; Age = \{23\}
 
 
 ### Composite attributes
@@ -204,7 +204,7 @@ they are also called
 Using our database example, and shown in
             Figure 8.3, Address may consist of Number, 
             Street and Suburb. So this would be written as →
-            Address = {59 + ‘Meek Street’ + ‘Kingsford’}
+            Address = \{59 + 'Meek Street' + 'Kingsford'\}
 
 ![Blue rectangle with the word EMPLOYEE. Under this are four yellow 
 ovals with the words Name, Address, Birthdate, Salary. There are lines 

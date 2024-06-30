@@ -132,11 +132,11 @@ Figure 10.6 shows an example of an employee project table. From this table,
 Next, let’s look at some possible anomalies that might occur with
     this table during the following steps.
 
-1. Action: Add row {S85,35,P1,9}
+1. Action: Add row \{S85,35,P1,9\}
 1. Problem: There are two tuples with conflicting budgets
-1. Action: Delete tuple {S79, 27, P3, 1}
+1. Action: Delete tuple \{S79, 27, P3, 1\}
 1. Problem: Step #3 deletes the budget for project P3
-1. Action: Update tuple {S75, 32, P1, 7} to {S75, 35, P1, 7}
+1. Action: Update tuple \{S75, 32, P1, 7\} to \{S75, 35, P1, 7\}
 1. Problem: Step #5 creates two tuples with different values for project P1’s budget
 1. Solution: Create a separate table, each, for 
     Projects and Employees, as shown in Figure 10.7.
