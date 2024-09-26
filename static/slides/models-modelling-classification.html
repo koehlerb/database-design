@@ -1,23 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>Models, Modelling, and Classification of DBMS</title>
+    <title>Models, Modelling, and Classification of DBMS</title>
 
-		<link rel="stylesheet" href="../revealjs/dist/reset.css">
-		<link rel="stylesheet" href="../revealjs/dist/reveal.css">
-		<link rel="stylesheet" href="../revealjs/dist/theme/black.css">
+    <link rel="stylesheet" href="../revealjs/dist/reset.css" />
+    <link rel="stylesheet" href="../revealjs/dist/reveal.css" />
+    <link rel="stylesheet" href="../revealjs/dist/theme/black.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-markdown>
-					<textarea data-template>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-template>
 ## Models, Modelling, and Classification of DBMS
 ---
 ## Outline
@@ -116,7 +119,7 @@
 
 <small><a href="https://afteracademy.com/blog/what-is-data-abstraction-in-dbms-and-what-are-its-three-levels/">Database Abstraction</a></small>
 ---
-## View or Conceptual Level
+## View or External Level
 * how the data looks to end users developers
 * typically implemented as a database view
 * does not necessarily correspond directly to logical design
@@ -230,36 +233,36 @@
 ---
 ## DRAM vs. SDD vs. HDD
 * discussion
-					</textarea>
-				</section>
+					</textarea
+          >
+        </section>
+      </div>
+    </div>
 
-			</div>
-		</div>
+    <script src="../revealjs/dist/reveal.js"></script>
+    <script src="../revealjs/plugin/notes/notes.js"></script>
+    <script src="../revealjs/plugin/markdown/markdown.js"></script>
+    <script src="../revealjs/plugin/highlight/highlight.js"></script>
+    <script src="../revealjs/plugin/math/math.js"></script>
+    <script src="../revealjs/plugin/mermaid/mermaid.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
 
-		<script src="../revealjs/dist/reveal.js"></script>
-		<script src="../revealjs/plugin/notes/notes.js"></script>
-		<script src="../revealjs/plugin/markdown/markdown.js"></script>
-		<script src="../revealjs/plugin/highlight/highlight.js"></script>
-		<script src="../revealjs/plugin/math/math.js"></script>
-		<script src="../revealjs/plugin/mermaid/mermaid.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        mermaid: {},
 
-				mermaid: {},
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ 
-					RevealMarkdown, 
-					RevealHighlight, 
-					RevealNotes, 
-					RevealMath.KaTeX,
-					RevealMermaid
-				]
-			});
-		</script>
-	</body>
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.KaTeX,
+          RevealMermaid,
+        ],
+      });
+    </script>
+  </body>
 </html>
